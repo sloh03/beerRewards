@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+    <title>Beer Rewards</title>
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href='beer.css'>
+
+ 		<link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+
+ 		<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+  		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  		crossorigin="anonymous"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+      <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header" style="font-family: 'Lobster', cursive;">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a  class="navbar-brand" style="color: white; text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; font-size: 40px;" href="#">Beer Rewards</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<!--       <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li> -->
+        <!-- <li class="dropdown"> -->
+         <!--  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="jumbotron" style="color: white; text-shadow: -2px 0 orange, 0 2px orange, 2px 0 orange, 0 -2px orange; font-family: 'Lobster', cursive;" >
+  <h1>See how many beers your workout earned</h1>
+  <p>...</p>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading" style="background-color: orange;">
+    <h3 class="panel-title">Track My Workout</h3>
+  </div>
+  <div class="panel-body">
+    <form action="/my-handling-form-page" method="post">
+    <div>
+        <label for="workout">Workout:</label>
+        <input type="text" id="name" name="user_name">
+    </div>
+    <div>
+        <label for="user-weight">Weight:</label>
+        <input type="user-weight" id="weight" name="user_weight">
+    </div>
+    <div>
+        <label for="activity">Activity Length:</label>
+        <input type="activity" id="activity-length" name="user_activity">
+    </div>
+    <div>
+        <label for="beer">Beer Preferred:</label>
+        <input type="beerChoice" id="beer-search" name="user_beer">
+    </div>
+
+    <button class="btn btn-primary" id="find-beer" type="submit">Submit</button>
+</form>
+  </div>
+</div>
+		
+	</body>
+	
+</html>

@@ -1,0 +1,9 @@
+.container-fluid {
+	background-color: orange;
+}
+
+.jumbotron {
+	background-image: url(central-bar-draft-beer-940x626.jpg);
+	background-size: 100%;
+	background-repeat: none;
+}
