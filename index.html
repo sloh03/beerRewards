@@ -11,7 +11,7 @@
 
  		<link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
 
- 		<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+ 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
   		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   		crossorigin="anonymous"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -74,14 +74,21 @@
     <form action="/my-handling-form-page" method="post">
     <div>
         <label for="workout" style="display: block;">Workout:</label>
-        <input type="text" id="name" name="user_name">
+        <input list="workout-list" type="text" id="name" name="user_name">
+            <datalist id="workout-list">
+              <option value="Biking">
+              <option value="Walking">
+              <option value="Running">
+              <option value="Yoga">
+              <option value="Hiking">
+            </datalist>
     </div>
     <div>
-        <label for="user-weight" style="display: block;">Weight:</label>
+        <label for="user-weight" style="display: block;">Weight (lb):</label>
         <input type="user-weight" id="weight" name="user_weight">
     </div>
     <div>
-        <label for="activity" style="display: block;">Activity Length:</label>
+        <label for="activity" style="display: block;">Activity Length (hrs):</label>
         <input type="activity" id="activity-length" name="user_activity">
     </div>
     <div>
