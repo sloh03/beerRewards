@@ -2,7 +2,7 @@
 <html>
 	<head>
 
-    <title>Cheatz</title>
+    <title>Fitness + Grub</title>
 		<meta charset="utf-8">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,8 +14,15 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ 		<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+  		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  		crossorigin="anonymous"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+      <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+	
 	</head>
 	<body>
 
@@ -29,7 +36,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a  class="navbar-brand" style="color: white; text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; font-size: 40px;" href="#">FitnessGrub</a>
+      <a  class="navbar-brand" style="color: white; text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; font-size: 40px;" href="#">Fitness + Grub</a>
     </div>
 
 
@@ -44,8 +51,8 @@
             <li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>
           </ul>
-        </li>
-      </ul>
+
+
       <form class="navbar-form navbar-right">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
@@ -57,19 +64,64 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+<div class="jumbotron" style="color: white; text-shadow: -2px 0 #339966, 0 2px #339966, 2px 0 #339966, 0 -2px #339966; font-family: 'Lobster', cursive; height: 350px;" >
+  <h1>Looking for a cheat meal or just any meal in general?</h1>
+  <p>Enter your workout and see if you earned it!</p>
+</div>
 
-<div class="panel panel-default" style="width: 80%; margin: 0 auto;">
+<div class="panel panel-default" style="float: left; margin-right: 5px; width: 33%;">
   <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
-    <h3 class="panel-title">Recipes</h3>
+    <h3 class="panel-title">Track My Workout</h3>
   </div>
   <div class="panel-body">
-    <div class="w3-content w3-display-container" id="carousel">
-      <!-- Prepend AJAX target -->
-      <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-      <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    <form action="/my-handling-form-page" method="post">
+    <div>
+        <label for="workout" style="display: block;">Workout:</label>
+        <input type="text" id="name" name="user_name">
     </div>
+    <div>
+        <label for="user-weight" style="display: block;">Weight:</label>
+        <input type="user-weight" id="weight" name="user_weight">
+    </div>
+    <div>
+        <label for="activity" style="display: block;">Activity Length:</label>
+        <input type="activity" id="activity-length" name="user_activity">
+    </div>
+    <div>
+        <label for="beer" style="display: block;">Beer Preferred:</label>
+        <input type="beerChoice" id="beer-search" name="user_beer">
+    </div>
+
+    <button class="btn btn-primary" id="find-beer" type="submit">Submit</button>
+</form>
   </div>
 </div>
-  <script src="logic.js"></script>
-</body>
+
+<div class="panel panel-default" style="float: left; width: 33%; margin-right: 5px;">
+  <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
+    <h3 class="panel-title">Recipe of the Month</h3>
+  </div>
+  <div class="panel-body">
+
+      <img src="GBSP.jpg" class="recipeMonth" alt="" style="width:65%; margin-left: 70px; margin-bottom: 10px;">
+      <p style="text-align: center;">Ground Beef Stuffed Green Bell Peppers With Cheese</p>
+ 
+  </div>
+</div>
+
+<div class="panel panel-default" style="float: left; width: 33%;">
+  <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
+    <h3 class="panel-title">Events</h3>
+  </div>
+  <div class="panel-body">
+    <h4>Holualoa - Tucson Marathon</h4>
+        <p>SAT DEC 8th, 2018 - 7am</p>
+    <h4>Tucson Medical Center - Marathon Relay</h4>
+        <p>SAT DEC 8th, 2018 - 7am</p>
+  </div>
+</div>
+
+		
+	</body>
+	
 </html>

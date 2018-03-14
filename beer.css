@@ -1,3 +1,5 @@
+
+
 .container-fluid {
 	background-color: #339966;
 }
@@ -6,4 +8,8 @@
 	background-image: url(food.jpg);
 	background-size: 100%;
 	background-repeat: none;
+}
+
+#find-beer {
+	margin-top: 10px;
 }
