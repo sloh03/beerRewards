@@ -31,6 +31,7 @@
 
 <body>
 
+  <!-- NAV -->
   <nav class="navbar navbar-default">
     <div class="container-fluid">
 
@@ -67,13 +68,6 @@
           </li>
         </ul>
 
-        <form class="navbar-form navbar-right">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search" id="recipeTypeInput">
-          </div>
-          <button type="submit" class="btn btn-default" id="recipeSearch">Search</button>
-        </form>
-
       </div> <!-- /.navbar-collapse -->
 
     </div> <!-- /.container-fluid -->
@@ -82,6 +76,7 @@
   
 
 
+  <!-- Row: Jumbotron -->
   <div class="container">
     <div class="row">
       <div class="col-lr-12">
@@ -95,28 +90,33 @@
     </div>
   </div>
 
-  <!-- LEFT PANEL -->
+
+  <!-- Row: Search and Results -->
   <div class="container2">
     <div class="row2">
+
+      <!-- LEFT PANEL -->
+      <!-- User Input -->
       <div class="col-md-4">
         <div class="panel panel-default" style="float: left;">
 
+          <!-- Input Heading -->
           <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
             <i class="material-icons">fitness_center</i>
             <h3 class="panel-title" style="display: inline-block;">Track My Workout</h3>
-          </div>
-          <!-- /.panel-heading -->
+          </div> <!-- /.panel-heading -->
 
+          <!-- Input Body -->
           <div class="panel-body">
             <form action="/my-handling-form-page" method="post">
-              <!--<form action="/action_page.php" method="post">-->
+
               <!-- Weight input -->
               <div>
                 <label for="user-weight" style="display: block;">Weight (lb):</label>
                 <input type="number" id="weight" name="user_weight" min="0">
               </div>
               <p id="invalid-weight"></p>
-              <!-- Workout input -->
+              <!-- Workout activity input -->
               <div>
                 <label for="workout" style="display: block;">Workout:</label>
                 <select id="workout">
@@ -155,91 +155,88 @@
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
-                  </div>
-                  <!-- End of Modal Content -->
+                  </div> <!-- End of Modal Content -->
                 </div>
-              </div>
-              <!-- End of Modal -->
-
+              </div> <!-- End of Modal -->
+              
             </form>
-          </div>
-          <!-- /.panel-body -->
-        </div>
-        <!-- /LEFT PANEL -->
-      </div>
+          </div> <!-- /.panel-body -->
 
-      <!-- MIDDLE PANEL -->
-      <div class="col-md-4">
-        <div class="panel panel-default" style="float: left;overflow: scroll;">
-          <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
-            <i class="material-icons">local_drink</i>
-            <h3 class="panel-title" style="display: inline-block;">Beer of the Month</h3>
-          </div>
-          <!-- /.panel-heading -->
-
-          <div class="panel-body">
-            <img src="Lags.jpg" class="recipeMonth" alt="" style="width:65%; margin-left: 55px; margin-bottom: 10px;">
-            <p style="text-align: center;">Lagunitas IPA India Pale Ale</p>
-          </div>
-          <!-- /.panel-body -->
-        </div>
-        <!-- /MIDDLE PANEL -->
-      </div>
-
-      <!-- RIGHT PANEL -->
-      <div class="col-md-4">
-        <div class="panel panel-default" style="float: left;">
-          <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
-            <i class="material-icons">event</i>
-            <h3 class="panel-title" style="display: inline-block;">Events</h3>
-          </div>
-          <!-- /.panel-heading -->
-          <div class="panel-body">
-            <h4>Holualoa - Tucson Marathon</h4>
-            <p>SAT DEC 8th, 2018 - 7am</p>
-            <h4>Tucson Medical Center - Marathon Relay</h4>
-            <p>SAT DEC 8th, 2018 - 7am</p>
-          </div>
-          <!-- /.panel-body -->
-        </div>
-        <!-- /RIGHT PANEL -->
-      </div>
+        </div> 
+      </div> <!-- /LEFT PANEL -->
 
     </div>
-  </div>
-  </div>
+  </div><!-- /.container2 --> 
 
-
-  <!-- RESULTS PANEL -->
-<div class="container">
-  <div class="row">
-      <div class="col-lr-12">
-
-        <div class="panel panel-default" style="float: left;">
+  <!-- MIDDLE PANEL -->
+  <div class="col-md-4">
+      <div class="panel panel-default" style="float: left;overflow: scroll;">
         <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
           <i class="material-icons">local_drink</i>
-          <h3 class="panel-title" style="display: inline-block;">Beer Results</h3>
+          <h3 class="panel-title" style="display: inline-block;">Beer of the Month</h3>
         </div>
+        <!-- /.panel-heading -->
 
         <div class="panel-body">
+          <img src="Lags.jpg" class="recipeMonth" alt="" style="width:65%; margin-left: 55px; margin-bottom: 10px;">
+          <p style="text-align: center;">Lagunitas IPA India Pale Ale</p>
+        </div>
+        <!-- /.panel-body -->
+      </div>
+      <!-- /MIDDLE PANEL -->
+    </div>
 
-          <div id="start-message" style="color: #bdbdbd; text-align: center;">
-            <br>
-            <br> Enter your information to begin.
-            <br>
-            <br>
+    <!-- RIGHT PANEL -->
+    <div class="col-md-4">
+      <div class="panel panel-default" style="float: left;">
+        <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
+          <i class="material-icons">event</i>
+          <h3 class="panel-title" style="display: inline-block;">Events</h3>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+          <h4>Holualoa - Tucson Marathon</h4>
+          <p>SAT DEC 8th, 2018 - 7am</p>
+          <h4>Tucson Medical Center - Marathon Relay</h4>
+          <p>SAT DEC 8th, 2018 - 7am</p>
+        </div>
+        <!-- /.panel-body -->
+      </div>
+      <!-- /RIGHT PANEL -->
+    </div>
+
+  <!-- RESULTS PANEL -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lr-12">
+        <div class="panel panel-default" style="float: left;">
+
+          <!-- Heading -->
+          <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
+            <i class="material-icons">local_drink</i>
+            <h3 class="panel-title" style="display: inline-block;">Beer Results</h3>
           </div>
 
-          <table class="table" id="beer-table">
-            <thead></thead>
-            <tbody></tbody>
-          </table>
-
+          <!-- Body -->
+          <div class="panel-body">
+            <!-- Placeholder -->
+            <div id="start-message" style="color: #bdbdbd; text-align: center;">
+              <br>
+              <br> Enter your information to begin.
+              <br>
+              <br>
+            </div>
+            <!-- Beer results table -->
+            <table class="table" id="beer-table">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          
         </div>
-        <!-- /RESULTS PANEL -->
       </div>
     </div>
-  </div>
+  </div> <!-- /RESULTS PANEL -->
 
 
 </body>

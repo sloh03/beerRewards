@@ -66,8 +66,11 @@ $(document).ready(function(){
     var beerLogo; // <-- Not working properly ***
     var beerName;
     var beerStyle;
-    var beerCompanyInfo; // <-- Need to add withBreweries to search url to get this in JSON ***
     var abv;
+    var beerCompany;
+    var breweryLocality;
+    var breweryRegion;
+    var breweryLocation;
     var beerDescription;
   
     // Div to hold beer item for list results
@@ -76,16 +79,17 @@ $(document).ready(function(){
     // AJAX call to get beer info
       function searchBreweryDb(beerPreference) {
   
-          var queryURL = "https://corsbridge.herokuapp.com/http%3A%2F%2Fapi.brewerydb.com%2Fv2%2Fsearch%2F%3Fkey%3D2d763c46c3991fbfd625ffaea69e88f6%26p%3D1%26q%3D*" + beerPreference + "*";
-  
+          var myURL = "http://api.brewerydb.com/v2/search/?key=2d763c46c3991fbfd625ffaea69e88f6&q=" + beerPreference + "&withBreweries=Y";
           $.ajax( {
-              url: queryURL,
+              url: 'https://corsbridge.herokuapp.com/' + encodeURIComponent(myURL),
               method: "GET"
           }).then(function (response) {
   
               console.log(response);
   
               for (var i=0; i<12; i++) {
+
+                //   beerLogo = $('<img>').attr("src", response.data[i].labels.medium);
   
                   beerName = response.data[i].nameDisplay;
                   console.log('Beer name: ' + beerName);
@@ -96,6 +100,15 @@ $(document).ready(function(){
                   abv = response.data[i].abv;
                   abv = abv + ' ABV';
                   console.log('ABV: ' + abv);
+
+                  beerCompany = response.data[i].breweries[0].name;
+                  beerCompany = 'Brewed by ' + beerCompany;
+                  console.log(beerCompany);
+
+                  breweryLocality = response.data[i].breweries[0].locations[0].locality;
+                  breweryRegion = response.data[i].breweries[0].locations[0].region;
+                  breweryLocation = breweryLocality + ', ' + breweryRegion;
+                  console.log('Location: ' + breweryLocation);
   
                   beerDescription = response.data[i].description;
                   console.log('Beer description: ' + beerDescription);
@@ -143,13 +156,29 @@ $(document).ready(function(){
   
           var row = $('<tr>')
               // Append image here
+            //   .append(
+            //       '<td>' + 
+            //           beerLogo +
+            //       '<td>'
+            //   )
               .append(
                   '<td>' + 
                       '<strong>' + beerName + '</strong>' + ', ' + beerStyle + ', ' + abv + '<br>' +
+                      beerCompany + '<br>' +
                       beerDescription + '<br>' + '<br>' +
                   '</td>');
       
           $('#beer-table > tbody').append(row);
       }
-      
+
+
+
+    // GOOGLE MAPS API
+    // Google API key: AIzaSyC9voO8x0eEiRh0FnOw8B1TQbbKIJGQFY8
+    // $.ajax({
+    //     url : 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + $("#origin").val() + '&destinations=' + $("#destinations").val() +'&mode=driving&key=AIzaSyASanevdiCI4t1h8LMf5FgWHMD52K3QeB0',
+    //     method: "GET",
+    // }).then(function (response) {
+
+    // })
 })
