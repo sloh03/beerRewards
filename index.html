@@ -2,7 +2,7 @@
 <html>
 	<head>
 
-    <title>Fitness + Grub</title>
+    <title>beerRewards</title>
 		<meta charset="utf-8">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +21,10 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
-      <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 	
 	</head>
 	<body>
@@ -36,7 +39,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a  class="navbar-brand" style="color: white; text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; font-size: 40px;" href="#">Fitness + Grub</a>
+      <a  class="navbar-brand" style="color: white; text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; font-size: 40px;" href="#">beerRewards</a>
     </div>
 
 
@@ -65,13 +68,14 @@
 </nav>
 
 <div class="jumbotron" style="color: white; text-shadow: -2px 0 #339966, 0 2px #339966, 2px 0 #339966, 0 -2px #339966; font-family: 'Lobster', cursive; height: 350px;" >
-  <h1>Looking for a cheat meal or just any meal in general?</h1>
-  <p>Enter your workout and see if you earned it!</p>
+  <h1>How many beers did you earn?</h1>
+  <p>Enter your workout and find out!</p>
 </div>
 
 <div class="panel panel-default" style="float: left; margin-right: 5px; width: 33%;">
   <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
-    <h3 class="panel-title">Track My Workout</h3>
+    <i class="material-icons">fitness_center</i>
+    <h3 class="panel-title" style="display: inline-block;">Track My Workout</h3>
   </div>
   <div class="panel-body">
     <form action="/my-handling-form-page" method="post">
@@ -100,25 +104,29 @@
     </div>
 
     <button class="btn btn-primary" id="find-beer" type="submit">Submit</button>
+
+
 </form>
   </div>
 </div>
 
-<div class="panel panel-default" style="float: left; width: 33%; margin-right: 5px;">
+<div class="panel panel-default" style="float: left; overflow: scroll; width: 33%; margin-right: 5px; height: 330px;">
   <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
-    <h3 class="panel-title">Recipe of the Month</h3>
+    <i class="material-icons">local_drink</i>
+    <h3 class="panel-title" style="display: inline-block;">Beer of the Month</h3>
   </div>
   <div class="panel-body">
 
-      <img src="GBSP.jpg" class="recipeMonth" alt="" style="width:65%; margin-left: 70px; margin-bottom: 10px;">
-      <p style="text-align: center;">Ground Beef Stuffed Green Bell Peppers With Cheese</p>
+      <img src="Lags.jpg" class="recipeMonth" alt="" style="width:65%; margin-left: 70px; margin-bottom: 10px;">
+      <p style="text-align: center;">Lagunitas IPA India Pale Ale</p>
  
   </div>
 </div>
 
-<div class="panel panel-default" style="float: left; width: 33%;">
+<div class="panel panel-default" style="float: left;  overflow: scroll; width: 33%; height: 330px;">
   <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
-    <h3 class="panel-title">Events</h3>
+    <i class="material-icons">event</i>
+    <h3 class="panel-title" style="display: inline-block;">Events</h3>
   </div>
   <div class="panel-body">
     <h4>Holualoa - Tucson Marathon</h4>
