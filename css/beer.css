@@ -1,25 +1,105 @@
+/******************
+GENERAL
+******************/
 
-
-.container-fluid {
-	background-color: #339966;
+body {
+	box-sizing: border-box;
+	background-image: url(wood_background.jpg);
 }
 
-.jumbotron {
-	background-image: url(Beer-Taps-2.jpg);
-	background-size: 100%;
-	background-repeat: none;
+.container-fluid{
+	background-color: black;
 }
 
-#find-beer {
-	margin-top: 10px;
+p{
+	font-family:'Work Sans', sans-serif;
 }
 
+/* Panels */
 .panel {
 	width: 100%;
 }
 
 #small-panel {
 	height: 350px;
+}
+
+.panel-heading {
+	background-color: #000; 
+	color: white; 
+	font-family: 'Work Sans', sans-serif;
+}
+
+i.material-icons {
+	vertical-align: middle;
+}
+
+#title {
+	vertical-align: middle;
+}
+
+
+/******************
+NAVBAR
+******************/
+
+.navbar-collapse {
+	background-color:#000;
+}
+
+.navbar-header {
+	font-family:'Bitter', serif;
+	background-color:black;
+}
+
+.navbar-brand {
+	color: white; 
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; 
+	font-size: 40px;
+	font-family:'Bitter', serif; 
+	margin-bottom: 10px;
+	margin-left: 15px;
+}
+
+
+
+/******************
+JUMBOTRON
+******************/
+.jumbotron {
+	background-image: url(craftbeer.jpg);
+	background-position: fixed; 
+	background-size: 100%;
+	background-repeat: none;
+}
+
+.jumbotron .container {
+    width: fit-content;
+    padding: 10px 30px;
+    margin: 10px;
+    background-color: white;
+    position: relative;
+	top: -60px;
+	left: 35%;
+    text-align: center;
+}
+
+.jumbotron {
+	color: white; 
+	text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; 
+	font-family:'Bitter', serif, sans-serif; 
+	height: 350px;
+}
+
+
+
+/******************
+WORKOUT INPUT
+******************/
+
+/* Submit button */
+#find-beer {
+	margin-top: 10px;
 }
 
 .center {
@@ -32,18 +112,27 @@
 	text-align: center;
 }
 
-#beer-titles {
-	font-size: 1.1em;
-	margin-bottom: 0;
+
+
+/******************
+SEARCH RESULTS
+******************/
+
+/* Form */
+#change-beer-preference {
+	margin-top: 10px;
+	margin-left: 10px;
 }
 
+/* Button */
 #change-beer {
 	display: inline;
 }
 
-#change-beer-preference {
-	margin-top: 10px;
-	margin-left: 10px;
+/* Results */
+#beer-titles {
+	font-size: 1.1em;
+	margin-bottom: 0;
 }
 
 #brewery {
@@ -55,10 +144,10 @@
 	line-height: 1.75;
 }
 
-html, body {
+/* html, body {
     overflow-x: hidden;
     overflow-y: auto;
-}
+} */
 
 #worth {
 	margin-top: 15px;

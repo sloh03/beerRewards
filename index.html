@@ -12,16 +12,17 @@
   <link rel="stylesheet" href='css/beer.css'>
 
   <!-- Bootstrap CSS -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
   <!-- Javascript -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
 
   <script src="javascript/logic.js"></script>
+  <script src="javascript/events.js"></script>
 
   <!-- Firebase Reference -->
   <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
@@ -30,6 +31,11 @@
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bitter:700|Work+Sans" rel="stylesheet">
+
+  <!-- Moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+
 </head>
 
 <body>
@@ -37,44 +43,10 @@
   <!-- NAV -->
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-
-      <div class="navbar-header" style="font-family: 'Playfair Display', serif;">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-          aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" style="color: white; text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; font-size: 40px;"
-          href="#">beerRewards</a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="dropdown-menu">
-          <li>
-            <a href="#">Action</a>
-          </li>
-          <li>
-            <a href="#">Another action</a>
-          </li>
-          <li>
-            <a href="#">Something else here</a>
-          </li>
-          <li role="separator" class="divider"></li>
-          <li>
-            <a href="#">Separated link</a>
-          </li>
-          <li role="separator" class="divider"></li>
-          <li>
-            <a href="#">One more separated link</a>
-          </li>
-        </ul>
-
-      </div> <!-- /.navbar-collapse -->
-
+        <div class="navbar-header">        
+          <a class="navbar-brand" style="color: white; text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; font-size: 40px;font-family:'Bitter', serif; margin-bottom: 10px;margin-left: 15px;" href="#">[Beer Rewards]</a>
+        </div>
     </div> <!-- /.container-fluid -->
-
   </nav> <!-- /.navbar navbar-default -->
   
 
@@ -83,12 +55,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lr-12">
-
-        <div class="jumbotron" style="color: white; text-shadow: -2px 0 #339966, 0 2px #339966, 2px 0 #339966, 0 -2px #339966; font-family: 'Playfair Display', serif; height: 350px;">
-          <h1>How many beers did you earn?</h1>
-          <p>Enter your workout and find out!</p>
-        </div>
-
+          <div class="jumbotron" style="color: white; text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; font-family:'Bitter', serif, sans-serif; height: 350px;">
+              <div id="quote">
+                <h1 style="width:1000px ;margin-left: 45px;margin-top: 40px;">How many beers did you earn?</h1>
+                <p style="width: 350px; margin-left: 350px; font-size: 20px;">Enter your workout and find out!</p>
+              </div> 
+          </div>
       </div>
     </div>
   </div>
@@ -97,18 +69,61 @@
   <!-- Row: Search and Results -->
   <div class="container2">
     <div class="row2">
-
-      <div class="col-md-1"></div>
+      <!-- <div class="col-md-1"></div> -->
 
       <!-- LEFT PANEL -->
       <!-- User Input -->
-      <div class="col-md-3">
+      <div class="col-md-6">
         <div class="panel panel-default" id="small-panel" style="float: left;">
 
+          <!-- Heading -->
+          <div class="panel-heading" style="background-color: #000; color: white; font-family: 'Work Sans', sans-serif">
+              <i class="material-icons" id="icon">event</i>
+              <h3 class="panel-title" id="title" style="display: inline-block; font-size: 20px">Events</h3>
+          </div>
+          
+          <!-- Body -->
+            <div class="panel-body" >
+             <form action="/my-handling-form-page" method="post">
+
+               <div class="event-choice">
+                 <!-- Workout activity input -->
+                 <div>
+                   <label for="workout-event" style="display: block;">Workout Event:</label>
+                   <!-- Submit Button -->
+                   <button class="btn btn-primary" id="find-event" style="background-color: #339966; color: white; float: right;" type="submit">Submit</button>
+                   <select id="workout-event">
+                     <option value="walking">Walking</option>
+                     <option value="running">Running</option>
+                     <option value="biking">Biking</option>
+                     <option value="yoga">Yoga</option>
+                     <option value="hiking">Hiking</option>
+                   </select>
+                 </div>
+               </div>
+               <div class="event-info" style="overflow: scroll; height:250px;">
+                  <table class="table" id="event-table">
+                    <thead></thead>
+                    <tbody height="100px" style="overflow:scroll;"></tbody>
+                  </table>
+                </div>
+ 
+              </form>
+            </div> <!-- /.panel-body -->
+        </div> 
+      </div> <!-- /LEFT PANEL -->
+
+    </div>
+  </div><!-- /.container2 --> 
+
+  <!-- MIDDLE PANEL -->
+  <div class="col-md-3">
+      <div class="panel panel-default" id="small-panel" style="float: left;overflow: scroll;">
+
           <!-- Input Heading -->
-          <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
-            <i class="material-icons">fitness_center</i>
-            <h3 class="panel-title" style="display: inline-block;">Track My Workout</h3>
+          <div class="panel-heading" style="background-color: #000; color: white; font-family: 'Work Sans', sans-serif">
+              <i class="material-icons">fitness_center</i>
+              <h3 class="panel-title" id="title" style="display: inline-block; font-size: 20px;">Track My Workout</h3>
           </div> <!-- /.panel-heading -->
 
           <!-- Input Body -->
@@ -143,7 +158,7 @@
                 <input type="beerChoice" id="beer-search" name="user_beer">
               </div>
               <!-- Submit Button -->
-              <button class="btn btn-primary" id="find-beer" type="submit" data-toggle="modal" data-target="#myModal">Submit</button>
+              <button class="btn btn-primary" id="find-beer" type="submit" data-target="#myModal">Submit</button>
 
               <!-- Modal -->
               <div id="myModal" class="modal fade" role="dialog">
@@ -167,18 +182,18 @@
             </form>
           </div> <!-- /.panel-body -->
 
-        </div> 
-      </div> <!-- /LEFT PANEL -->
-
+        <!-- /.panel-body -->
+      </div>
+      <!-- /MIDDLE PANEL -->
     </div>
-  </div><!-- /.container2 --> 
 
-  <!-- MIDDLE PANEL -->
-  <div class="col-md-3">
-      <div class="panel panel-default" id="small-panel" style="float: left;overflow: scroll;">
-        <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
-          <i class="material-icons">local_drink</i>
-          <h3 class="panel-title" style="display: inline-block;">Beer of the Month</h3>
+    <!-- RIGHT PANEL -->
+    <div class="col-md-3">
+      <div class="panel panel-default" id="small-panel" style="float: left;">
+
+          <div class="panel-heading" style="background-color: #000; color: white; font-family: 'Work Sans', sans-serif">
+              <i class="material-icons">local_drink</i>
+              <h3 class="panel-title" id="title" style="display: inline-block; font-size: 20px;">Beer of the Month</h3>
         </div>
         <!-- /.panel-heading -->
 
@@ -187,30 +202,12 @@
           <!-- <img src="Lags.jpg" class="recipeMonth" alt="" style="width:65%; margin-left: 55px; margin-bottom: 10px;">
           <p style="text-align: center;">Lagunitas IPA India Pale Ale</p> -->
         </div>
-        <!-- /.panel-body -->
-      </div>
-      <!-- /MIDDLE PANEL -->
-    </div>
 
-    <!-- RIGHT PANEL -->
-    <div class="col-md-4">
-      <div class="panel panel-default" id="small-panel" style="float: left;">
-        <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
-          <i class="material-icons">event</i>
-          <h3 class="panel-title" style="display: inline-block;">Events</h3>
-        </div>
-        <!-- /.panel-heading -->
-        <div class="panel-body">
-          <h4>Holualoa - Tucson Marathon</h4>
-          <p>SAT DEC 8th, 2018 - 7am</p>
-          <h4>Tucson Medical Center - Marathon Relay</h4>
-          <p>SAT DEC 8th, 2018 - 7am</p>
-        </div>
         <!-- /.panel-body -->
       </div>
       <!-- /RIGHT PANEL -->
     </div>
-    <div class="col-md-1"></div>
+    <!-- <div class="col-md-1"></div> -->
 
   <!-- RESULTS PANEL -->
   <div class="container" id="beer-results">
@@ -222,9 +219,9 @@
         <div class="panel panel-default" style="float: left;">
 
           <!-- Heading -->
-          <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
-            <i class="material-icons">local_drink</i>
-            <h3 class="panel-title" id="beer-preference" style="display: inline-block;">Beer Results</h3>
+          <div class="panel-heading" style="background-color: #000; color: white; font-family:'Bitter', serif;">
+              <i class="material-icons">local_drink</i>
+              <h3 class="panel-title" id="title" id="beer-preference" style="display: inline-block; font-size: 20px;">Beer Results</h3>
           </div>
 
           <!-- Input Display -->
@@ -240,12 +237,7 @@
 
           <!-- Body -->
           <div class="panel-body">
-            <!-- Placeholder -->
-            <div id="start-message" style="color: #bdbdbd; text-align: center;">
-              <br> Enter your information to begin.
-              <br>
-              <br>
-            </div>
+
             <!-- Beer results table -->
             <table class="table" id="beer-table">
               <thead></thead>
