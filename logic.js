@@ -60,7 +60,7 @@ $(document).ready(function(){
     }
   
   
-  
+
     // BREWERY DB
     // Global variables
     var beerLogo; // <-- Not working properly ***
@@ -98,12 +98,22 @@ $(document).ready(function(){
                   console.log('Beer style: ' + beerStyle);
   
                   abv = response.data[i].abv;
-                  abv = abv + ' ABV';
                   console.log('ABV: ' + abv);
+                  if (abv == undefined) {
+                      abv = '';
+                  }
+                  else {
+                      abv = abv + ' ABV'
+                  }
 
                   beerCompany = response.data[i].breweries[0].name;
-                  beerCompany = 'Brewed by ' + beerCompany;
                   console.log(beerCompany);
+                  if (beerCompany == undefined) {
+                      beerCompany = '';
+                  }
+                  else {
+                    beerCompany = 'Brewed by ' + beerCompany;
+                  }
 
                   breweryLocality = response.data[i].breweries[0].locations[0].locality;
                   breweryRegion = response.data[i].breweries[0].locations[0].region;
@@ -112,6 +122,9 @@ $(document).ready(function(){
   
                   beerDescription = response.data[i].description;
                   console.log('Beer description: ' + beerDescription);
+                  if (beerDescription == undefined) {
+                      beerDescription = '';
+                  }
   
                   estimateCalories(abv);
   
@@ -141,16 +154,23 @@ $(document).ready(function(){
   
   
       // # OF BEERS ALLOWED
+      var amountBeersAllowed;
       // Estimate amount of beer type allowed
       function estimateWorkoutWorth(caloriesBurned, caloriesEstPer12oz) {
-          var amountBeersAllowed = caloriesBurned/caloriesEstPer12oz;
+          amountBeersAllowed = caloriesBurned/caloriesEstPer12oz;
+          if (amountBeersAllowed == NaN) {
+              amountBeersAllowed = '';
+          }
+          else {
+             amountBeersAllowed = Math.round( amountBeersAllowed * 10 ) / 10;
+          }
           console.log('Amount of beers allowed: ' + amountBeersAllowed);
   
           displayResults();
       }
   
   
-      // *** NEW ***
+
       // ADD TO RESULTS
       function displayResults() {
   
@@ -161,11 +181,13 @@ $(document).ready(function(){
             //           beerLogo +
             //       '<td>'
             //   )
+
               .append(
                   '<td>' + 
-                      '<strong>' + beerName + '</strong>' + ', ' + beerStyle + ', ' + abv + '<br>' +
-                      beerCompany + '<br>' +
-                      beerDescription + '<br>' + '<br>' +
+                      '<p id="beer-titles"><strong>' + beerName + '</strong>' + ', ' + beerStyle + ', ' + abv + '<br></p>' +
+                      '<i>' + beerCompany + '</i><br>' +
+                      beerDescription + '<br>' + 
+                      amountBeersAllowed + '<br>' +
                   '</td>');
       
           $('#beer-table > tbody').append(row);
@@ -173,12 +195,34 @@ $(document).ready(function(){
 
 
 
-    // GOOGLE MAPS API
-    // Google API key: AIzaSyC9voO8x0eEiRh0FnOw8B1TQbbKIJGQFY8
-    // $.ajax({
-    //     url : 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + $("#origin").val() + '&destinations=' + $("#destinations").val() +'&mode=driving&key=AIzaSyASanevdiCI4t1h8LMf5FgWHMD52K3QeB0',
-    //     method: "GET",
-    // }).then(function (response) {
+    // PUNK API
+    function getRandomBeer() {
+  
+        var queryURL = "https://api.punkapi.com/v2/beers/random";
+        $.ajax( {
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
 
-    // })
+            console.log(response);
+
+            var randomBeerDiv = $('<div class="random-beer">');
+
+            var logo = response[0].image_url;
+
+            var beerName = response[0].name;
+            console.log(beerName);
+
+            randomBeerDiv.append(
+                '<img class=center height=200px src="' + logo + '">' + '<br>' + 
+                '<p id=beer-name>' + beerName + '</p>'
+            );
+
+            $('#random-beer').append(randomBeerDiv);
+            
+        })
+
+    }
+
+    getRandomBeer();
 })

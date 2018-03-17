@@ -18,3 +18,18 @@
 	width: 100%;
 	height: 350px;
 }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#beer-name {
+	text-align: center;
+}
+
+#beer-titles {
+	font-size: 1.2em;
+	margin-bottom: 0;
+}
