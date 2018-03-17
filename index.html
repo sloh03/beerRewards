@@ -80,7 +80,7 @@
           <!-- Heading -->
           <div class="panel-heading" style="background-color: #000; color: white; font-family: 'Work Sans', sans-serif">
             <i class="material-icons">local_drink</i>
-            <h3 class="panel-title" id="title" style="display: inline-block; font-size: 20px;">Beer Pick</h3>
+            <h3 class="panel-title title" style="display: inline-block; font-size: 20px;">Beer Pick</h3>
           </div>
           <!-- /.panel-heading -->
           <!-- Body -->
@@ -98,87 +98,14 @@
 
 
   <!-- MIDDLE PANEL -->
-  <div class="col-md-3">
-      <div class="panel panel-default" id="small-panel" style="float: left;overflow: scroll;">
-
-          <!-- Input Heading -->
-          <div class="panel-heading" style="background-color: #000; color: white; font-family: 'Work Sans', sans-serif">
-              <i class="material-icons">fitness_center</i>
-              <h3 class="panel-title" id="title" style="display: inline-block; font-size: 20px;">Track My Workout</h3>
-          </div> <!-- /.panel-heading -->
-
-          <!-- Input Body -->
-          <div class="panel-body">
-            <form action="/my-handling-form-page" method="post">
-
-              <!-- Weight input -->
-              <div>
-                <label for="user-weight" style="display: block;">Weight (lb):</label>
-                <input type="number" id="weight" name="user_weight" min="0">
-              </div>
-              <p id="invalid-weight"></p>
-              <!-- Workout activity input -->
-              <div>
-                <label for="workout" style="display: block;">Workout:</label>
-                <select id="workout">
-                  <option value="3.8">Walking</option>
-                  <option value="7.5">Running</option>
-                  <option value="8">Biking</option>
-                  <option value="3">Yoga</option>
-                  <option value="6">Hiking</option>
-                </select>
-              </div>
-              <!-- Workout length -->
-              <div>
-                <label for="activity" style="display: block;">Activity Length (hr):</label>
-                <input type="number" id="activity-length" name="user_activity" min="0">
-              </div>
-              <!-- Beer Preference -->
-              <div>
-                <label for="beer" style="display: block;">Beer Preference:</label>
-                <input type="beerChoice" id="beer-search" name="user_beer">
-              </div>
-              <!-- Submit Button -->
-              <button class="btn btn-primary" id="find-beer" type="submit" data-target="#myModal">Submit</button>
-
-              <!-- Modal -->
-              <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                  <!-- Modal Content -->
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title">Modal Header</h4>
-                    </div>
-                    <div class="modal-body">
-                      <p>Body text for modal</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                  </div> <!-- End of Modal Content -->
-                </div>
-              </div> <!-- End of Modal -->
-              
-            </form>
-          </div> <!-- /.panel-body -->
-
-        <!-- /.panel-body -->
-      </div>
-      <!-- /MIDDLE PANEL -->
-    </div>
-
-
-
-    <!-- RIGHT PANEL -->
-    <div class="col-md-6">
+  <div class="col-md-6">
       <div class="panel panel-default" id="small-panel" style="float: left;">
 
-        <!-- Heading -->
+        <!-- Input Heading -->
         <div class="panel-heading" style="background-color: #000; color: white; font-family: 'Work Sans', sans-serif">
-            <i class="material-icons" id="icon">event</i>
-            <h3 class="panel-title" id="title" style="display: inline-block; font-size: 20px">Upcoming Events</h3>
-        </div>
+            <i class="material-icons" id="icon">fitness_center</i>
+            <h3 class="panel-title title" style="display: inline-block; font-size: 20px;">Upcoming Events</h3>
+        </div> <!-- /.panel-heading -->
 
         <!-- Body -->
         <div class="panel-body" >
@@ -208,6 +135,79 @@
         </div> <!-- /.panel-body -->
 
       </div>
+      <!-- /MIDDLE PANEL -->
+    </div>
+
+
+
+    <!-- RIGHT PANEL -->
+    <div class="col-md-3">
+      <div class="panel panel-default" id="small-panel" style="float: left;">
+
+                 <!-- Input Heading -->
+                 <div class="panel-heading" style="background-color: #000; color: white; font-family: 'Work Sans', sans-serif">
+                    <i class="material-icons">fitness_center</i>
+                    <h3 class="panel-title title" style="display: inline-block; font-size: 20px;">Track My Workout</h3>
+                </div> <!-- /.panel-heading -->
+      
+                <!-- Input Body -->
+                <div class="panel-body">
+                  <form action="/my-handling-form-page" method="post">
+      
+                    <!-- Weight input -->
+                    <div>
+                      <label for="user-weight" style="display: block;">Weight (lb):</label>
+                      <input type="number" id="weight" name="user_weight" min="0">
+                    </div>
+                    <p id="invalid-weight"></p>
+                    <!-- Workout activity input -->
+                    <div>
+                      <label for="workout" style="display: block;">Workout:</label>
+                      <select id="workout">
+                        <option value="3.8">Walking</option>
+                        <option value="7.5">Running</option>
+                        <option value="8">Biking</option>
+                        <option value="3">Yoga</option>
+                        <option value="6">Hiking</option>
+                      </select>
+                    </div>
+                    <!-- Workout length -->
+                    <div>
+                      <label for="activity" style="display: block;">Activity Length (hr):</label>
+                      <input type="number" id="activity-length" name="user_activity" min="0">
+                    </div>
+                    <!-- Beer Preference -->
+                    <div>
+                      <label for="beer" style="display: block;">Beer Preference:</label>
+                      <input type="beerChoice" id="beer-search" name="user_beer">
+                    </div>
+                    <!-- Submit Button -->
+                    <button class="btn btn-primary" id="find-beer" type="submit" data-target="#myModal">Submit</button>
+      
+                    <!-- Modal -->
+                    <div id="myModal" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
+                        <!-- Modal Content -->
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p>Body text for modal</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div> <!-- End of Modal Content -->
+                      </div>
+                    </div> <!-- End of Modal -->
+                    
+                  </form>
+                </div> <!-- /.panel-body -->
+      
+              <!-- /.panel-body -->
+      </div>
     </div>
     <!-- <div class="col-md-1"></div> -->
 
@@ -225,7 +225,7 @@
           <!-- Heading -->
           <div class="panel-heading" style="background-color: #000; color: white; font-family:'Bitter', serif;">
               <i class="material-icons">local_drink</i>
-              <h3 class="panel-title" id="title" id="beer-preference" style="display: inline-block; font-size: 20px;">Beer Results</h3>
+              <h3 class="panel-title title" id="beer-preference" style="display: inline-block; font-size: 20px;">Beer Results</h3>
           </div>
 
           <!-- Input Display -->

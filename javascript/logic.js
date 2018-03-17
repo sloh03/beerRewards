@@ -120,6 +120,12 @@ $(document).ready(function(){
           }).then(function (response) {
   
               console.log(response);
+              if(!response.hasOwnProperty('data')){
+                // TODO: Show error message in html elemtsnt
+                $('#beer-preference').html('No Beer Results for \'' + beerPreference + '\'');
+                // $('#beer-table').empty();
+                return false;
+              }
   
               for (var i=0; i<12; i++) {
 
