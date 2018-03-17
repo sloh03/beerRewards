@@ -98,9 +98,11 @@
   <div class="container2">
     <div class="row2">
 
+      <div class="col-md-1"></div>
+
       <!-- LEFT PANEL -->
       <!-- User Input -->
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="panel panel-default" id="small-panel" style="float: left;">
 
           <!-- Input Heading -->
@@ -172,7 +174,7 @@
   </div><!-- /.container2 --> 
 
   <!-- MIDDLE PANEL -->
-  <div class="col-md-4">
+  <div class="col-md-3">
       <div class="panel panel-default" id="small-panel" style="float: left;overflow: scroll;">
         <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
           <i class="material-icons">local_drink</i>
@@ -208,11 +210,15 @@
       </div>
       <!-- /RIGHT PANEL -->
     </div>
+    <div class="col-md-1"></div>
 
   <!-- RESULTS PANEL -->
-  <div class="container">
+  <div class="container" id="beer-results">
     <div class="row">
-      <div class="col-lr-12">
+
+      <div class="col-md-1"></div>
+
+      <div class="col-md-10">
         <div class="panel panel-default" style="float: left;">
 
           <!-- Heading -->
@@ -221,9 +227,12 @@
             <h3 class="panel-title" id="beer-preference" style="display: inline-block;">Beer Results</h3>
           </div>
 
+          <!-- Input Display -->
+          <div id="workout-display"></div>
+
           <!-- Change preference -->
           <form id="change-beer-preference">
-            <label for="beer">Change Preference:</label>
+            <label for="beer">Change Beer Preference:</label>
             <input type="beerChoice" id="beer-search-change" name="user_beer">
             <!-- Submit Button -->
             <button class="btn btn-primary btn-xs" id="change-beer" type="submit">Submit</button>
@@ -244,6 +253,8 @@
             </table>
           </div>
           
+          <div class="col-md-1"></div>
+
         </div>
       </div>
     </div>

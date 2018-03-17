@@ -33,7 +33,7 @@
 }
 
 #beer-titles {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	margin-bottom: 0;
 }
 
@@ -42,6 +42,24 @@
 }
 
 #change-beer-preference {
-	margin-top: 5px;
-	margin-left: 5px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#brewery {
+	font-size: .9em;
+	margin-bottom: -10px;
+}
+
+#description {
+	line-height: 1.75;
+}
+
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#worth {
+	margin-top: 15px;
 }

@@ -17,6 +17,7 @@ $(document).ready(function(){
     // Assign reference to database to var 'database'
     var database = firebase.database();
   
+    $('#beer-results').hide();
     $('#change-beer-preference').hide();
 
   
@@ -46,6 +47,9 @@ $(document).ready(function(){
       $('#workout').val('');
       console.log('MET: ' + workoutMetValue);
       database.ref().child('user/MET').set(workoutMetValue);
+
+      var workoutActivity = $('#workout option:selected').text(); // <-- Not working?
+      console.log('Workout activity: ' + workoutActivity);
   
       // Capture length of workout
       var workoutLength = $('#activity-length').val().trim();
@@ -126,19 +130,26 @@ $(document).ready(function(){
                   abv = response.data[i].abv;
                   console.log('ABV: ' + abv);
 
-                  beerCompany = response.data[i].breweries[0].name;
-                  console.log(beerCompany);
-                  if (beerCompany == undefined) {
-                      beerCompany = '';
-                  }
-                  else {
-                    beerCompany = 'Brewed by ' + beerCompany;
-                  }
-
                   breweryLocality = response.data[i].breweries[0].locations[0].locality;
                   breweryRegion = response.data[i].breweries[0].locations[0].region;
-                  breweryLocation = breweryLocality + ', ' + breweryRegion;
+                  breweryLocation = ' in ' + breweryLocality + ', ' + breweryRegion;
                   console.log('Location: ' + breweryLocation);
+
+                  beerCompany = response.data[i].breweries[0].name;
+                  console.log(beerCompany);
+                  if ( (beerCompany == undefined) && (breweryLocality == undefined) && (breweryRegion == undefined) ) {
+                      beerCompany = '';
+                      breweryLocation = '';
+                  }
+                  else if ( (breweryLocality == undefined) && (breweryRegion == undefined) ){
+                    beerCompany = 'Brewed by ' + beerCompany;
+                  }
+                  else if ( (breweryLocality == undefined) && (breweryRegion !== undefined) ){
+                    beerCompany = 'Brewed by ' + beerCompany + ' in ' + breweryRegion;
+                  }
+                  else {
+                      beerCompany = 'Brewed by ' + beerCompany + breweryLocation;
+                  }
   
                   beerDescription = response.data[i].description;
                   console.log('Beer description: ' + beerDescription);
@@ -148,9 +159,16 @@ $(document).ready(function(){
                   // Hide instructions
                   $('#start-message').hide();
 
+                  $('#beer-results').show();
                   $('#beer-preference').html('Beer Results for \'' + beerPreference + '\'');
 
+                //   $('#workout-display').text('Workout: ' + workoutLength + ' hours');
+
                   $('#change-beer-preference').show();
+
+                //   $('html, body').animate({
+                //     scrollTop: $("#beer-results").offset().top
+                // }, 2000);
   
               }
           })
@@ -204,9 +222,9 @@ $(document).ready(function(){
             .append(
                 '<td>' + 
                     '<p id="beer-titles"><strong>' + beerName + '</strong>' + ', ' + beerStyle + ', ' + abv + ' ABV' + '<br></p>' +
-                    '<i>' + beerCompany + '</i><br>' +
-                    beerDescription + '<br>' + 
-                    '<p>Workout worth: ' + amountBeersAllowed + '</p>' +
+                    '<p id="brewery"><i>' + beerCompany + '</i></p><br>' +
+                    '<span id="description">' + beerDescription + '</span><br>' + 
+                    '<p id="worth">Workout worth: ' + amountBeersAllowed + '</p><br>' +
                 '</td>');
         
           $('#beer-table > tbody').prepend(row);
