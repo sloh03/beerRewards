@@ -72,6 +72,7 @@ $(document).ready(function(){
     var breweryRegion;
     var breweryLocation;
     var beerDescription;
+    var count = 0;
   
     // Div to hold beer item for list results
     var beerListItemDiv = $('<div class="beer-list-item">');
@@ -99,12 +100,6 @@ $(document).ready(function(){
   
                   abv = response.data[i].abv;
                   console.log('ABV: ' + abv);
-                  if (abv == undefined) {
-                      abv = '';
-                  }
-                  else {
-                      abv = abv + ' ABV'
-                  }
 
                   beerCompany = response.data[i].breweries[0].name;
                   console.log(beerCompany);
@@ -122,10 +117,7 @@ $(document).ready(function(){
   
                   beerDescription = response.data[i].description;
                   console.log('Beer description: ' + beerDescription);
-                  if (beerDescription == undefined) {
-                      beerDescription = '';
-                  }
-  
+
                   estimateCalories(abv);
   
                   // Hide instructions
@@ -174,6 +166,7 @@ $(document).ready(function(){
       // ADD TO RESULTS
       function displayResults() {
   
+        if ( (abv !== undefined) && (beerDescription !== undefined) ) {
           var row = $('<tr>')
               // Append image here
             //   .append(
@@ -184,13 +177,14 @@ $(document).ready(function(){
 
               .append(
                   '<td>' + 
-                      '<p id="beer-titles"><strong>' + beerName + '</strong>' + ', ' + beerStyle + ', ' + abv + '<br></p>' +
+                      '<p id="beer-titles"><strong>' + beerName + '</strong>' + ', ' + beerStyle + ', ' + abv + ' ABV' + '<br></p>' +
                       '<i>' + beerCompany + '</i><br>' +
                       beerDescription + '<br>' + 
                       amountBeersAllowed + '<br>' +
                   '</td>');
       
           $('#beer-table > tbody').append(row);
+        }
       }
 
 
