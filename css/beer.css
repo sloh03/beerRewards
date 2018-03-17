@@ -111,6 +111,17 @@ WORKOUT INPUT
 	text-align: center;
 }
 
+#workout {
+	margin-bottom: 10px;
+}
+
+#workout-length-input {
+	margin-top: 0px;
+}
+
+#activity-length {
+	margin-bottom: 10px;
+}
 
 
 /******************
