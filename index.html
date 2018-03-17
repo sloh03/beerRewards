@@ -71,50 +71,31 @@
     <div class="row2">
       <!-- <div class="col-md-1"></div> -->
 
-      <!-- LEFT PANEL -->
-      <!-- User Input -->
-      <div class="col-md-6">
-        <div class="panel panel-default" id="small-panel" style="float: left;">
 
+
+      <!-- LEFT PANEL -->
+      <!-- Beer Pick -->
+      <div class="col-md-3">
+        <div class="panel panel-default" id="small-panel" style="float: left;">
           <!-- Heading -->
           <div class="panel-heading" style="background-color: #000; color: white; font-family: 'Work Sans', sans-serif">
-              <i class="material-icons" id="icon">event</i>
-              <h3 class="panel-title" id="title" style="display: inline-block; font-size: 20px">Events</h3>
+            <i class="material-icons">local_drink</i>
+            <h3 class="panel-title" id="title" style="display: inline-block; font-size: 20px;">Beer Pick</h3>
           </div>
-          
+          <!-- /.panel-heading -->
           <!-- Body -->
-            <div class="panel-body" >
-             <form action="/my-handling-form-page" method="post">
-
-               <div class="event-choice">
-                 <!-- Workout activity input -->
-                 <div>
-                   <label for="workout-event" style="display: block;">Workout Event:</label>
-                   <!-- Submit Button -->
-                   <button class="btn btn-primary" id="find-event" style="background-color: #339966; color: white; float: right;" type="submit">Submit</button>
-                   <select id="workout-event">
-                     <option value="walking">Walking</option>
-                     <option value="running">Running</option>
-                     <option value="biking">Biking</option>
-                     <option value="yoga">Yoga</option>
-                     <option value="hiking">Hiking</option>
-                   </select>
-                 </div>
-               </div>
-               <div class="event-info" style="overflow: scroll; height:250px;">
-                  <table class="table" id="event-table">
-                    <thead></thead>
-                    <tbody height="100px" style="overflow:scroll;"></tbody>
-                  </table>
-                </div>
- 
-              </form>
-            </div> <!-- /.panel-body -->
+          <div class="panel-body">
+            <div id="random-beer"></div>
+            <!-- <img src="Lags.jpg" class="recipeMonth" alt="" style="width:65%; margin-left: 55px; margin-bottom: 10px;">
+            <p style="text-align: center;">Lagunitas IPA India Pale Ale</p> -->
+          </div>
         </div> 
       </div> <!-- /LEFT PANEL -->
 
     </div>
   </div><!-- /.container2 --> 
+
+
 
   <!-- MIDDLE PANEL -->
   <div class="col-md-3">
@@ -187,27 +168,50 @@
       <!-- /MIDDLE PANEL -->
     </div>
 
+
+
     <!-- RIGHT PANEL -->
-    <div class="col-md-3">
+    <div class="col-md-6">
       <div class="panel panel-default" id="small-panel" style="float: left;">
 
-          <div class="panel-heading" style="background-color: #000; color: white; font-family: 'Work Sans', sans-serif">
-              <i class="material-icons">local_drink</i>
-              <h3 class="panel-title" id="title" style="display: inline-block; font-size: 20px;">Beer of the Month</h3>
-        </div>
-        <!-- /.panel-heading -->
-
-        <div class="panel-body">
-          <div id="random-beer"></div>
-          <!-- <img src="Lags.jpg" class="recipeMonth" alt="" style="width:65%; margin-left: 55px; margin-bottom: 10px;">
-          <p style="text-align: center;">Lagunitas IPA India Pale Ale</p> -->
+        <!-- Heading -->
+        <div class="panel-heading" style="background-color: #000; color: white; font-family: 'Work Sans', sans-serif">
+            <i class="material-icons" id="icon">event</i>
+            <h3 class="panel-title" id="title" style="display: inline-block; font-size: 20px">Events</h3>
         </div>
 
-        <!-- /.panel-body -->
+        <!-- Body -->
+        <div class="panel-body" >
+          <form action="/my-handling-form-page" method="post">
+            <div class="event-choice">
+              <!-- Workout activity input -->
+              <div>
+                <label for="workout-event" id="event-title">Workout Event:</label>
+                <select id="workout-event">
+                  <option value="walking">Walking</option>
+                  <option value="running">Running</option>
+                  <option value="biking">Biking</option>
+                  <option value="yoga">Yoga</option>
+                  <option value="hiking">Hiking</option>
+                </select>
+                <!-- Submit Button -->
+                <button class="btn btn-primary btn-xs" id="find-event" type="submit">Submit</button>
+              </div>
+            </div>
+            <div class="event-info" style="overflow: scroll; height:250px;">
+              <table class="table" id="event-table">
+                <thead></thead>
+                <tbody height="100px" style="overflow:scroll;"></tbody>
+              </table>
+            </div>
+          </form>
+        </div> <!-- /.panel-body -->
+
       </div>
-      <!-- /RIGHT PANEL -->
     </div>
     <!-- <div class="col-md-1"></div> -->
+
+
 
   <!-- RESULTS PANEL -->
   <div class="container" id="beer-results">
@@ -226,7 +230,7 @@
 
           <!-- Input Display -->
           <div id="workout-display"></div>
-
+          
           <!-- Change preference -->
           <form id="change-beer-preference">
             <label for="beer">Change Beer Preference:</label>
@@ -237,7 +241,6 @@
 
           <!-- Body -->
           <div class="panel-body">
-
             <!-- Beer results table -->
             <table class="table" id="beer-table">
               <thead></thead>
