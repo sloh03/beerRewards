@@ -101,7 +101,7 @@
       <!-- LEFT PANEL -->
       <!-- User Input -->
       <div class="col-md-4">
-        <div class="panel panel-default" style="float: left;">
+        <div class="panel panel-default" id="small-panel" style="float: left;">
 
           <!-- Input Heading -->
           <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
@@ -173,7 +173,7 @@
 
   <!-- MIDDLE PANEL -->
   <div class="col-md-4">
-      <div class="panel panel-default" style="float: left;overflow: scroll;">
+      <div class="panel panel-default" id="small-panel" style="float: left;overflow: scroll;">
         <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
           <i class="material-icons">local_drink</i>
           <h3 class="panel-title" style="display: inline-block;">Beer of the Month</h3>
@@ -192,7 +192,7 @@
 
     <!-- RIGHT PANEL -->
     <div class="col-md-4">
-      <div class="panel panel-default" style="float: left;">
+      <div class="panel panel-default" id="small-panel" style="float: left;">
         <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
           <i class="material-icons">event</i>
           <h3 class="panel-title" style="display: inline-block;">Events</h3>
@@ -222,18 +222,17 @@
           </div>
 
           <!-- Change preference -->
-<form id="change-beer-preference">
-    <label for="beer">Change Preference:</label>
-    <input type="beerChoice" id="beer-search-change" name="user_beer">
-    <!-- Submit Button -->
-    <button class="btn btn-primary btn-xs" id="change-beer" type="submit">Submit</button>
-    </form>
+          <form id="change-beer-preference">
+            <label for="beer">Change Preference:</label>
+            <input type="beerChoice" id="beer-search-change" name="user_beer">
+            <!-- Submit Button -->
+            <button class="btn btn-primary btn-xs" id="change-beer" type="submit">Submit</button>
+          </form>
 
           <!-- Body -->
           <div class="panel-body">
             <!-- Placeholder -->
             <div id="start-message" style="color: #bdbdbd; text-align: center;">
-              <br>
               <br> Enter your information to begin.
               <br>
               <br>

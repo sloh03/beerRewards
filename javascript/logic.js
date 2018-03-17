@@ -17,6 +17,7 @@ $(document).ready(function(){
     // Assign reference to database to var 'database'
     var database = firebase.database();
   
+    $('#change-beer-preference').hide();
 
   
     // USER INFO
@@ -148,6 +149,8 @@ $(document).ready(function(){
                   $('#start-message').hide();
 
                   $('#beer-preference').html('Beer Results for \'' + beerPreference + '\'');
+
+                  $('#change-beer-preference').show();
   
               }
           })
@@ -198,19 +201,51 @@ $(document).ready(function(){
             //       '<td>'
             //   )
 
-              .append(
-                  '<td>' + 
-                      '<p id="beer-titles"><strong>' + beerName + '</strong>' + ', ' + beerStyle + ', ' + abv + ' ABV' + '<br></p>' +
-                      '<i>' + beerCompany + '</i><br>' +
-                      beerDescription + '<br>' + 
-                      '<p>Workout worth: ' + amountBeersAllowed + '</p>' +
-                  '</td>');
-      
-          $('#beer-table > tbody').append(row);
+            .append(
+                '<td>' + 
+                    '<p id="beer-titles"><strong>' + beerName + '</strong>' + ', ' + beerStyle + ', ' + abv + ' ABV' + '<br></p>' +
+                    '<i>' + beerCompany + '</i><br>' +
+                    beerDescription + '<br>' + 
+                    '<p>Workout worth: ' + amountBeersAllowed + '</p>' +
+                '</td>');
+        
+          $('#beer-table > tbody').prepend(row);
 
         }
 
       }
+
+    
+
+    $("#change-beer").on("click", function(event) {
+        event.preventDefault();
+
+        // Get text input and clear textbox
+        var beerPreference = $('#beer-search-change').val().trim();
+        $('#beer-search-change').val('');
+        console.log('Change preference to: ' + beerPreference);
+
+        // Get workout info from database
+        // Get snapshot of weight, MET, and workoutLength
+        database.ref().child('user/weight').on('value', function(snapshot) {
+            weight = snapshot.val();
+            console.log('Snapshot weight: ' + weight);
+        })
+        database.ref().child('user/MET').on('value', function(snapshot) {
+            workoutMetValue = snapshot.val();
+            console.log('Snapshot MET: ' + workoutMetValue);
+        })
+        database.ref().child('user/workoutLength').on('value', function(snapshot) {
+            workoutLength = snapshot.val();
+            console.log('Snapshot workout length: ' + workoutLength);
+        })
+
+        if (beerPreference !== '') {
+            searchBreweryDb(beerPreference);
+          }
+
+    })
+
 
 
 

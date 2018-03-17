@@ -16,6 +16,9 @@
 
 .panel {
 	width: 100%;
+}
+
+#small-panel {
 	height: 350px;
 }
 
