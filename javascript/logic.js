@@ -3,36 +3,54 @@ $(document).ready(function(){
     // SET UP DATABASE
   
     // Initialize Firebase
-    // var config = {
-    // };
-    // firebase.initializeApp(config);
+    var config = {
+        apiKey: "AIzaSyAH-hvLtOxs_aYXPObKGewPTtNFvZ9yCK8",
+        authDomain: "beerrewards-bc381.firebaseapp.com",
+        databaseURL: "https://beerrewards-bc381.firebaseio.com",
+        projectId: "beerrewards-bc381",
+        storageBucket: "beerrewards-bc381.appspot.com",
+        messagingSenderId: "958252999049"
+    };
+
+    firebase.initializeApp(config);
   
     // Assign reference to database to var 'database'
-    // var database = firebase.database();
+    var database = firebase.database();
   
-    // });
-  
-  
+
   
     // USER INFO
     // Get user info on 'Submit'
     $("#find-beer").on("click", function(event) {
       event.preventDefault();
+
+      // Create object components for user
+      user = {
+        weight: 0,
+        MET: 0,
+        workoutLength: 0,
+      }
+
+      // Add user to database
+      database.ref().child("user").set(user);
   
       // Capture weight input
       var weight = $('#weight').val().trim();
       $('#weight').val('');
       console.log('Weight: ' + weight);
+      database.ref().child('user/weight').set(weight);
   
       // Capture MET number from exercise input
       var workoutMetValue = $('#workout').val();
       $('#workout').val('');
       console.log('MET: ' + workoutMetValue);
+      database.ref().child('user/MET').set(workoutMetValue);
   
       // Capture length of workout
       var workoutLength = $('#activity-length').val().trim();
       $('#activity-length').val('');
       console.log('Workout: ' + workoutLength + 'hrs');
+      database.ref().child('user/workoutLength').set(workoutLength);
   
       // Capture beer preference
       var beerPreference = $('#beer-search').val().trim();
@@ -40,7 +58,10 @@ $(document).ready(function(){
       console.log('Beer preference: ' + beerPreference);
   
       calories(workoutMetValue, weight);
-      searchBreweryDb(beerPreference);
+
+      if (beerPreference !== '') {
+        searchBreweryDb(beerPreference);
+      }
   
     });
   
@@ -94,6 +115,9 @@ $(document).ready(function(){
   
                   beerName = response.data[i].nameDisplay;
                   console.log('Beer name: ' + beerName);
+                  if (beerName == undefined) {
+                    $('#beer-table > tbody').text("No results found for " + beerPreference);
+                  }
   
                   beerStyle = response.data[i].style.name;
                   console.log('Beer style: ' + beerStyle);
@@ -122,9 +146,8 @@ $(document).ready(function(){
   
                   // Hide instructions
                   $('#start-message').hide();
-  
-                  // // Display on results page
-                  $('#beer-display').append(beerListItemDiv);
+
+                  $('#beer-preference').html('Beer Results for \'' + beerPreference + '\'');
   
               }
           })
@@ -180,11 +203,13 @@ $(document).ready(function(){
                       '<p id="beer-titles"><strong>' + beerName + '</strong>' + ', ' + beerStyle + ', ' + abv + ' ABV' + '<br></p>' +
                       '<i>' + beerCompany + '</i><br>' +
                       beerDescription + '<br>' + 
-                      amountBeersAllowed + '<br>' +
+                      '<p>Workout worth: ' + amountBeersAllowed + '</p>' +
                   '</td>');
       
           $('#beer-table > tbody').append(row);
+
         }
+
       }
 
 

@@ -33,3 +33,12 @@
 	font-size: 1.2em;
 	margin-bottom: 0;
 }
+
+#change-beer {
+	display: inline;
+}
+
+#change-beer-preference {
+	margin-top: 5px;
+	margin-left: 5px;
+}

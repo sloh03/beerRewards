@@ -23,6 +23,9 @@
 
   <script src="javascript/logic.js"></script>
 
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
@@ -215,8 +218,16 @@
           <!-- Heading -->
           <div class="panel-heading" style="background-color: #339966; color: white; font-family: 'Playfair Display', serif;">
             <i class="material-icons">local_drink</i>
-            <h3 class="panel-title" style="display: inline-block;">Beer Results</h3>
+            <h3 class="panel-title" id="beer-preference" style="display: inline-block;">Beer Results</h3>
           </div>
+
+          <!-- Change preference -->
+<form id="change-beer-preference">
+    <label for="beer">Change Preference:</label>
+    <input type="beerChoice" id="beer-search-change" name="user_beer">
+    <!-- Submit Button -->
+    <button class="btn btn-primary btn-xs" id="change-beer" type="submit">Submit</button>
+    </form>
 
           <!-- Body -->
           <div class="panel-body">
