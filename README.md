@@ -80,29 +80,12 @@ Click 'More Information' to visit the event website.
 
 
 # Future Development
-* Show more details in beer results
+* Create user login, track calories burned over time and favorite beers
+* Show more details in beer results -- images, search by location, map location, ratings
 * Convert website into Android, iOS mobile app
 
 ![Alt text](images/8development.png?raw=true "Fullscreen")
 
-
-
-
-
-
-
-### Sweat, then regret.
-Users can determine how many calories they burned from a short list of common activities.
-Then, the user can choose a beer type and learn how many beers they can drink to nullify their workout.
-Additionally, they can search for events that match the activity of their choice to repeat the process and begin the cycle of meaningless exercise and self-reward.
-
-### Other Sources
-* none so far
-
-### To do:
-- [ ] this and that
-### *Extras*:
-- [ ] other stuff
 
 
 
