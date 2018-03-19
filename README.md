@@ -3,34 +3,34 @@
 ## Developed by Robert Aguero, Geina Corrente, Matt King and Stefanie Loh
 
 
-# Introduction
+# Concept
 
 
 ## How many beers was my workout worth?
-This app answers the question we've all been asking and can be used to spark conversations after a workout with friends.
-Enter a couple pieces of information and get your results.
+This app answers the question we've all been asking and can be used to spark fun conversations after a workout with friends.
+Enter minimal information to get results.
 
 ![Alt text](images/1logo.png?raw=true "Home Screen")
 
 
 
 ## Workout Information
-Your weight, your workout, and the length of time.
-Select from 5 common workout activities, then enter a name or style of beer to cater your results to your taste.
+Select from 5 common workout activities, add the workout length and your weight.
+Then customize your search by entering a name or style of beer.
 
 ![Alt text](images/2enter_info.png?raw=true "Enter Info")
 
 
 
 ## Get Your Results
-Get a list of beers with all the information you want -- name, brewery, origin, ABV, description, and the amount of beers your workout is worth.
+Get a list of beers with the brewery, origin, ABV, description, and the amount of beers your workout is worth.
 Easily change your search results without entering your workout information again.
 
 ![Alt text](images/3results.png?raw=true "Results")
 
 
 ## Bonus -- Discover Beers
-Check out our rotating display of beers waiting for you to discover. Click or hover over the name of the beer to read more.
+Check out our rotating display of beers waiting for you to discover. Click or hover over the name of the beer to read more about it.
 
 ![Alt text](images/4discover_beers.png?raw=true "Discover Beers")
 
@@ -42,16 +42,16 @@ Click 'More Information' to visit the event website.
 ![Alt text](images/5events.png?raw=true "Find Events")
 
 
-## Mobile Responsive Layout and Design
-The app fits any browser window and all tablets and phones.
-
-![Alt text](images/6mockup.png?raw=true "Mockup")
-
-
 # [LIVE DEMO](https://sloh03.github.io/beerRewards/)
 
 
-# Development
+# Tech
+
+
+## Mobile Responsive Layout and Design
+The app fits any browser window and all tablets and phones.
+* Bootstrap and matchMedia
+![Alt text](images/6mockup.png?raw=true "Mockup")
 
 
 ## Languages and Libraries
@@ -61,7 +61,7 @@ The app fits any browser window and all tablets and phones.
 * Materialize
 * Google Fonts
 
-![Alt text](images/7full_screen.png?raw=true "Fullscreen")
+![Alt text](images/7full_screen.png?raw=true "Mockup")
 
 
 ## JavaScript and Databases
@@ -77,6 +77,10 @@ The app fits any browser window and all tablets and phones.
 * Punk API
 * Eventful
 * Brewery DB
+
+
+# Future Development
+
 
 
 ### Sweat, then regret.
