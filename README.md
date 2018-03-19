@@ -21,7 +21,7 @@ The app fits any browser window and all tablets and phones.
 ![Alt text](images/6mockup.png?raw=true "Mockup")
 
 
-## User Friendly
+## User Friendly Layout
 * HTML
 * CSS
 * Bootstrap
