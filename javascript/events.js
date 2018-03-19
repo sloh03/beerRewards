@@ -19,19 +19,19 @@ $(document).ready(function(){
             for (var i = 0; i < 10; i++) {
 
                 eventTitle = eventful[i].title;
-                console.log("Title: " + eventful[i].title);
+                //console.log("Title: " + eventful[i].title);
 
                 eventVenue = eventful[i].venue_address;
-                console.log("Venue: " + eventful[i].venue_address);
+                //console.log("Venue: " + eventful[i].venue_address);
 
                 startTime = eventful[i].start_time;
-                console.log("Starts: " + eventful[i].start_time);
+                //console.log("Starts: " + eventful[i].start_time);
 
                 eventDateString = moment(startTime).format('ddd, MMM Do, h:mm a');
-                console.log("Moment start time: " + eventDateString);
+                //console.log("Moment start time: " + eventDateString);
 
-                // var eventLink = eventful[i].url;
-                // console.log("Link: " + eventLink);
+                eventLink = eventful[i].url;
+                //console.log("Link: " + eventLink);
 
                 // var eventLinkContainer = $("<a>")
                 // eventLinkContainer.append(eventLink);
@@ -69,19 +69,19 @@ $(document).ready(function(){
             for (var i = 0; i < 10; i++) {
 
                 eventTitle = eventful[i].title;
-                console.log("Title: " + eventful[i].title);
+                //console.log("Title: " + eventful[i].title);
 
                 eventVenue = eventful[i].venue_address;
-                console.log("Venue: " + eventful[i].venue_address);
+                //console.log("Venue: " + eventful[i].venue_address);
 
                 startTime = eventful[i].start_time;
-                console.log("Starts: " + eventful[i].start_time);
+                //console.log("Starts: " + eventful[i].start_time);
 
                 eventDateString = moment(startTime).format('ddd, MMM Do, h:mm a');
-                console.log("Moment start time: " + eventDateString);
+                //console.log("Moment start time: " + eventDateString);
 
-                // var eventLink = eventful[i].url;
-                // console.log("Link: " + eventLink);
+                eventLink = eventful[i].url;
+                //console.log("Link: " + eventLink);
 
                 // var eventLinkContainer = $("<a>")
                 // eventLinkContainer.append(eventLink);
@@ -97,9 +97,10 @@ $(document).ready(function(){
 
         if ( (eventTitle !== undefined) && (eventVenue !== undefined)) {
 
-            var row = $('<tr>').append('<td>' + '<p id="event-titles"><strong>' + eventTitle + '</strong>' + ' - ' + eventVenue + '<br>' + eventDateString + '<br>' + '</td>');
+            var row = $('<tr>').append('<td>' + '<p id="event-titles"><strong>' + eventTitle + '</strong>' + ' - ' + eventVenue + '<br>' + eventDateString + ' <a href="' + eventLink + '" target="_blank">' + "More Information" + '</a>' + '<br>' + '</td>');
 
             $('#event-table > tbody').append(row);
         }
     }
 })
+//'<a href="' + eventLink + '">'
