@@ -6,7 +6,7 @@
 # Concept
 
 
-## How many beers was my workout worth?
+## "How many beers was my workout worth?"
 This app answers the question we've all been asking and can be used to spark fun conversations after a workout with friends.
 Enter minimal information to get results.
 
