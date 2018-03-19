@@ -77,9 +77,29 @@ $(document).ready(function(){
           if (beerPreference !== '') {
               searchBreweryDb(beerPreference);
 
-              $('html, body').animate({
-                scrollTop: $("#beer-results").offset().top + 700
-              }, 1000)
+            //   $('html, body').animate({
+            //     scrollTop: $("#beer-results").offset().top + 700
+            //   }, 1000)
+              function mediaSize() {
+                var isTabletLandscape = window.matchMedia('(min-width: 992px) and (max-width: 1366px) and (orientation: landscape)');
+                var isPhoneLandscape = window.matchMedia('(min-width: 320px) and (max-width: 991px) and (orientation: landscape)');
+                var isPhonePortrait = window.matchMedia('(min-width: 320px) and (max-width: 812px) and (orientation: portrait)');
+                if (isTabletLandscape.matches) {
+                    $('html,body').animate({scrollTop: $("#beer-results").offset().top + 600
+                }, 1000)
+                } else if (isPhoneLandscape.matches) {
+                    $('html,body').animate({scrollTop: $("#beer-results").offset().top + 1400
+                }, 1000)
+                } else if (isPhonePortrait.matches) {
+                    $('html,body').animate({scrollTop: $("#beer-results").offset().top + 1400
+                }, 1000)
+                } else {
+                    $('html,body').animate({scrollTop: $("#beer-results").offset().top + 600
+                }, 1000)
+                }
+              }
+              mediaSize();
+
  
           }
         } else {
