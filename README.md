@@ -2,13 +2,8 @@
 
 ## Developed by Robert Aguero, Geina Corrente, Matt King and Stefanie Loh
 
-## [Link to Current Page](https://sloh03.github.io/beerRewards/)
 
-### Sweat, then regret.
-Users can determine how many calories they burned from a short list of common activities.
-Then, the user can choose a beer type and learn how many beers they can drink to nullify their workout.
-Additionally, they can search for events that match the activity of their choice to repeat the process and begin the cycle of meaningless exercise and self-reward.
-
+# Introduction
 
 
 ## How many beers was my workout worth?
@@ -47,15 +42,47 @@ Click 'More Information' to visit the event website.
 ![Alt text](images/5events.png?raw=true "Find Events")
 
 
+## Mobile Responsive Layout and Design
+The app fits any browser window and all tablets and phones.
 
-### Languages, Libraries, and Databases
+![Alt text](images/6mockup.png?raw=true "Mockup")
+
+
+# [LIVE DEMO](https://sloh03.github.io/beerRewards/)
+
+
+# Development
+
+
+## Languages and Libraries
 * HTML
 * CSS
 * Bootstrap
 * Materialize
+* Google Fonts
+
+![Alt text](images/7full_screen.png?raw=true "Fullscreen")
+
+
+## JavaScript and Databases
 * JavaScript
 * jQuery
 * Firebase
+* Moment
+
+![Alt text](images/8development.png?raw=true "Fullscreen")
+
+
+## APIs
+* Punk API
+* Eventful
+* Brewery DB
+
+
+### Sweat, then regret.
+Users can determine how many calories they burned from a short list of common activities.
+Then, the user can choose a beer type and learn how many beers they can drink to nullify their workout.
+Additionally, they can search for events that match the activity of their choice to repeat the process and begin the cycle of meaningless exercise and self-reward.
 
 ### Other Sources
 * none so far
