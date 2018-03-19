@@ -71,6 +71,7 @@ Check out our rotating display of beers waiting for you to discover. Click or ho
 ## Bonus -- Browse Upcoming Fitness Events
 * Eventful API
 * Moment
+
 Looking for more opportunities to burn calories? Select an event category and scroll through events in the Tucson area.
 Click 'More Information' to visit the event website.
 
