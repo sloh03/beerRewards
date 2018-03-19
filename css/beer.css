@@ -15,33 +15,6 @@ p{
 	font-family:'Work Sans', sans-serif;
 }
 
-/* Panels */
-.panel {
-	width: 100%;
-}
-
-#small-panel {
-	height: 350px;
-}
-
-.panel-heading {
-	background-color: #000; 
-	color: white; 
-	font-family: 'Work Sans', sans-serif;
-}
-
-i.material-icons {
-	vertical-align: middle;
-}
-
-.title {
-	vertical-align: middle;
-}
-
-#event-title {
-	margin-bottom: 15px;
-}
-
 
 
 /******************
@@ -90,6 +63,40 @@ JUMBOTRON
 }
 
 
+
+/******************
+PANELS
+******************/
+
+.panel {
+	width: 100%;
+}
+
+#small-panel {
+	height: 350px;
+}
+
+.panel-heading {
+	background-color: #000; 
+	color: white; 
+	font-family: 'Work Sans', sans-serif;
+}
+
+i.material-icons {
+	vertical-align: middle;
+}
+
+.title {
+	vertical-align: middle;
+}
+
+#event-title {
+	margin-bottom: 15px;
+}
+
+#underline {
+	text-decoration: underline;
+}
 
 
 /******************
@@ -143,6 +150,13 @@ SEARCH RESULTS
 #beer-titles {
 	font-size: 1.1em;
 	margin-bottom: 0;
+	color: #999999;
+}
+
+#beer-results-name {
+	color: #AA0000;
+	font-weight: bolder;
+	font-size: 1.2em;
 }
 
 #brewery {
@@ -150,15 +164,23 @@ SEARCH RESULTS
 	margin-bottom: -10px;
 }
 
+#red {
+	color: #AA0000;
+}
+
+#light-gray {
+	color: #999999;
+}
+
 #description {
 	line-height: 1.75;
 }
 
-/* html, body {
-    overflow-x: hidden;
-    overflow-y: auto;
-} */
-
 #worth {
 	margin-top: 15px;
+}
+
+#amount {
+	font-weight: bold;
+	font-size: 1.2em;
 }

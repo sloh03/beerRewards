@@ -37,9 +37,6 @@ $(document).ready(function(){
         // Go ahead as long as inputs are validated.
         if(getInputValues()){
 
-          // var key = ref.push().getKey()
-          // firebase.push({...}).then( function (result) { console.log("generated key: " + result.key); });
-
           // Capture weight input
           var weight = $('#weight').val().trim();
           $('#weight').val('');
@@ -81,8 +78,9 @@ $(document).ready(function(){
               searchBreweryDb(beerPreference);
 
               $('html, body').animate({
-                  scrollTop: $("#beer-results").offset().top + 800
-              }, 2000);
+                scrollTop: $("#beer-results").offset().top + 700
+              }, 1000)
+ 
           }
         } else {
           $("#myModal").modal();
@@ -158,7 +156,7 @@ $(document).ready(function(){
 
                   breweryLocality = response.data[i].breweries[0].locations[0].locality;
                   breweryRegion = response.data[i].breweries[0].locations[0].region;
-                  breweryLocation = ' in ' + breweryLocality + ', ' + breweryRegion;
+                  breweryLocation = '<span id="light-gray"> in ' + breweryLocality + ', ' + breweryRegion + '</span>';
                   console.log('Location: ' + breweryLocation);
 
                   beerCompany = response.data[i].breweries[0].name;
@@ -168,13 +166,13 @@ $(document).ready(function(){
                       breweryLocation = '';
                   }
                   else if ( (breweryLocality == undefined) && (breweryRegion == undefined) ){
-                    beerCompany = 'Brewed by ' + beerCompany;
+                    beerCompany = '<span id="light-gray">Brewed by </span>' + '<span id="red">' + beerCompany + '</span>';
                   }
                   else if ( (breweryLocality == undefined) && (breweryRegion !== undefined) ){
-                    beerCompany = 'Brewed by ' + beerCompany + ' in ' + breweryRegion;
+                    beerCompany = '<span id="light-gray">Brewed by </span>' + '<span id="red">' + beerCompany + '</span><span id="light-gray"> in ' + breweryRegion + '</span>';
                   }
                   else {
-                      beerCompany = 'Brewed by ' + beerCompany + breweryLocation;
+                      beerCompany = '<span id="light-gray">Brewed by </span>' + '<span id="red">' + beerCompany + '</span><span id="light-gray">' + breweryLocation + '</span>';
                   }
   
                   beerDescription = response.data[i].description;
@@ -234,6 +232,7 @@ $(document).ready(function(){
       function displayResults() {
   
         if ( (abv !== undefined) && (beerDescription !== undefined) ) {
+
           var row = $('<tr>')
               // Append image here
             //   .append(
@@ -244,10 +243,10 @@ $(document).ready(function(){
 
             .append(
                 '<td>' + 
-                    '<p id="beer-titles"><strong>' + beerName + '</strong>' + ', ' + beerStyle + ', ' + abv + ' ABV' + '<br></p>' +
+                    '<p id="beer-titles"><strong><span id="beer-results-name">' + beerName + '</span></strong>' + ' ' + beerStyle + ', ' + abv + ' ABV' + '<br></p>' +
                     '<p id="brewery"><i>' + beerCompany + '</i></p><br>' +
                     '<span id="description">' + beerDescription + '</span><br>' + 
-                    '<p id="worth">Workout worth: ' + amountBeersAllowed + '</p><br>' +
+                    '<p id="worth">Workout worth (12oz): <span id="amount">' + amountBeersAllowed + '</span></p><br>' +
                 '</td>');
         
           $('#beer-table > tbody').prepend(row);
@@ -298,7 +297,7 @@ $(document).ready(function(){
 
                 randomBeerDiv.append(
                     '<img class=center height=200px src="' + logo + '">' + '<br>' + 
-                    '<p id=beer-name data-toggle=tooltip title="' + beerDescription + '">' + beerName + '</p>'
+                    '<p id=beer-name data-toggle=tooltip title="' + beerDescription + '">' + '<span id="underline">' + beerName + '</span></p>'
                 );
 
                 $('#random-beer').html(randomBeerDiv);
