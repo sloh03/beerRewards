@@ -8,13 +8,17 @@
 
 ## "How many beers was my workout worth?"
 This app answers the question we've all been asking and can be used to spark fun conversations after a workout with friends.
-Enter minimal information to get results.
 
 ![Alt text](images/1logo.png?raw=true "Home Screen")
 
 
 
 # Design
+
+## Mobile Responsive
+The app fits any browser window and all tablets and phones.
+* Bootstrap and matchMedia
+![Alt text](images/6mockup.png?raw=true "Mockup")
 
 
 ## Languages and Libraries
@@ -25,13 +29,6 @@ Enter minimal information to get results.
 * Google Fonts
 
 ![Alt text](images/7full_screen.png?raw=true "Full Screen")
-
-
-
-## Mobile Responsive Layout
-The app fits any browser window and all tablets and phones.
-* Bootstrap and matchMedia
-![Alt text](images/6mockup.png?raw=true "Mockup")
 
 
 
