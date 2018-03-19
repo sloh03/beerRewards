@@ -80,6 +80,8 @@ Click 'More Information' to visit the event website.
 
 
 # Future Development
+* Show more details in beer results
+* Convert website into Android, iOS mobile app
 
 ![Alt text](images/8development.png?raw=true "Fullscreen")
 
