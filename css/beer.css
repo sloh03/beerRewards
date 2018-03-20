@@ -90,13 +90,24 @@ i.material-icons {
 	vertical-align: middle;
 }
 
+/* Events */
 #event-title {
 	margin-bottom: 15px;
 }
 
+#event-titles {
+	font-weight: bold;
+}
+
+.rwd-break {
+	display: none;
+}
+
+/* Discover beer */
 #underline {
 	text-decoration: underline;
 }
+
 
 
 /******************
@@ -185,11 +196,22 @@ SEARCH RESULTS
 	font-size: 1.2em;
 }
 
-
-#event-titles {
-	font-weight: bold;
-}
-
 #workout-information {
 	overflow: hidden;
+}
+
+
+
+/*******************************
+419px and smaller
+********************************/
+@media screen and (max-width: 419px) {
+	.rwd-break {
+		display: block;
+	}
+
+	/* .event-info {
+		height: 200px;
+	} */
+
 }
