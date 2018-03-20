@@ -157,6 +157,8 @@ $(document).ready(function(){
                 // $('#beer-table').empty();
                 return false;
               }
+
+              $('#beer-table > tbody').empty();
               
               for (var i=0; i<12; i++) {
 

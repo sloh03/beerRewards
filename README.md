@@ -80,6 +80,7 @@ Click 'More Information' to visit the event website.
 
 
 # Future Development
+* Enter page 
 * Create user login, track calories burned over time and favorite beers
 * Show more details in beer results -- images, search by location, map location, ratings
 * Convert website into Android, iOS mobile app

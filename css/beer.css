@@ -184,3 +184,12 @@ SEARCH RESULTS
 	font-weight: bold;
 	font-size: 1.2em;
 }
+
+
+#event-titles {
+	font-weight: bold;
+}
+
+#workout-information {
+	overflow: hidden;
+}

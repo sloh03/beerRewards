@@ -54,7 +54,9 @@ $(document).ready(function(){
 
         var eventType1 = $("#workout-event").val();
 
-        var queryURL = "http://api.eventful.com/json/events/search?app_key=J5kvbtGnvrsF2MwM&keywords=" + eventType1 + "&location=Tucson&date=Future";
+        var eventLocation = $("#workout-location").val().trim();
+
+        var queryURL = "http://api.eventful.com/json/events/search?app_key=J5kvbtGnvrsF2MwM&keywords=" + eventType1 + "&location=" + eventLocation + "&date=Future";
 
         $.ajax({
             url: 'https://corsbridge.herokuapp.com/' + encodeURIComponent(queryURL),
@@ -62,7 +64,12 @@ $(document).ready(function(){
             dataType: 'json'
         }).then(function (response) {
 
-            console.log(response);
+            console.log("Response: " + response);
+            if(response.events === null){
+                // TODO: Show error message in html elemtsnt
+                $('#event-table > tbody').html("<strong>" + 'No Event Results for \'' + eventLocation + '\'' + "</strong>");
+                return false;
+            }
 
             var eventful = response.events.event;
 
@@ -80,7 +87,8 @@ $(document).ready(function(){
                 eventDateString = moment(startTime).format('ddd, MMM Do, h:mm a');
                 //console.log("Moment start time: " + eventDateString);
 
-                eventLink = eventful[i].url;
+                var eventLink = $("<a>").attr("href", eventful[i].url).append(eventTitle);
+                // eventLink = eventful[i].url;
                 //console.log("Link: " + eventLink);
 
                 // var eventLinkContainer = $("<a>")
@@ -97,7 +105,7 @@ $(document).ready(function(){
 
         if ( (eventTitle !== undefined) && (eventVenue !== undefined)) {
 
-            var row = $('<tr>').append('<td>' + '<p id="event-titles"><strong>' + eventTitle + '</strong>' + ' - ' + eventVenue + '<br>' + eventDateString + ' <a href="' + eventLink + '" target="_blank">' + "More Information" + '</a>' + '<br>' + '</td>');
+            var row = $('<tr>').append('<td>' + '<span id="event-titles"><strong>' + '<a href="' + eventLink + '" target="_blank">'  + eventTitle + '</a></strong></span>' + '<br>' + eventVenue + '<br>' + eventDateString + '<br>' + '</td>');
 
             $('#event-table > tbody').append(row);
         }
