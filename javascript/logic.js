@@ -77,9 +77,6 @@ $(document).ready(function(){
             if (beerPreference !== '') {
                 searchBreweryDb(beerPreference);
 
-            //   $('html, body').animate({
-            //       scrollTop: $("#beer-results").offset().top + 700
-            //   }, 1000);
                 function mediaSize() {
                     var isTabletLandscape = window.matchMedia('(min-width: 992px) and (max-width: 1366px) and (orientation: landscape)');
                     var isPhoneLandscape = window.matchMedia('(min-width: 320px) and (max-width: 991px) and (orientation: landscape)');
@@ -158,10 +155,15 @@ $(document).ready(function(){
             }
 
             $('#beer-table > tbody').empty();
+            counter = 0;
 
-            for (var i=0; i<12; i++) {
+            for (var i=0; i<30; i++) {
 
                 //   beerLogo = $('<img>').attr("src", response.data[i].labels.medium);
+
+                if (counter === 12) {
+                    break;
+                }
 
                 beerName = response.data[i].nameDisplay;
                 console.log('Beer name: ' + beerName);
@@ -248,12 +250,15 @@ $(document).ready(function(){
         displayResults();
     }
 
-
+var counter = 0;
 
     // ADD TO RESULTS
     function displayResults() {
 
         if ( (abv !== undefined) && (beerDescription !== undefined) && (beerStyle !== undefined)) {
+
+            counter++;
+            console.log('Counter: ' + counter);
 
             var row = $('<tr>')
                 // Append image here
@@ -286,21 +291,6 @@ $(document).ready(function(){
         var beerPreference = $('#beer-search-change').val().trim();
         $('#beer-search-change').val('');
         console.log('Change preference to: ' + beerPreference);
-
-        // Get workout info from database
-        // Get snapshot of weight, MET, and workoutLength
-        // database.ref().child('user/weight').on('value', function(snapshot) {
-        //     weight = snapshot.val();
-        //     console.log('Snapshot weight: ' + weight);
-        // })
-        // database.ref().child('user/MET').on('value', function(snapshot) {
-        //     workoutMetValue = snapshot.val();
-        //     console.log('Snapshot MET: ' + workoutMetValue);
-        // })
-        // database.ref().child('user/workoutLength').on('value', function(snapshot) {
-        //     workoutLength = snapshot.val();
-        //     console.log('Snapshot workout length: ' + workoutLength);
-        // })
 
         if (beerPreference !== '') {
             searchBreweryDb(beerPreference);
