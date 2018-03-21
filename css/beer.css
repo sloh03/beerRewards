@@ -99,7 +99,7 @@ i.material-icons {
 	font-weight: bold;
 }
 
-.rwd-break {
+.rwd-break { /* Line break point */
 	display: none;
 }
 
@@ -129,10 +129,12 @@ WORKOUT INPUT
 	text-align: center;
 }
 
+/* Options dropdown */
 #workout {
 	margin-bottom: 10px;
 }
 
+/* Form inputs */
 #workout-length-input {
 	margin-top: 0px;
 }
@@ -142,11 +144,12 @@ WORKOUT INPUT
 }
 
 
+
 /******************
 SEARCH RESULTS
 ******************/
 
-/* Form */
+/* Input form */
 #change-beer-preference {
 	margin-top: 10px;
 	margin-left: 15px;
@@ -214,6 +217,7 @@ SEARCH RESULTS
 		height: 200px;
 	} */
 
+	/* Location input */
 	#workout-location {
 		width: 90px;
 	}
