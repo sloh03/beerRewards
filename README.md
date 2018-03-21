@@ -2,9 +2,9 @@
 
 ## Developed by Robert Aguero, Geina Corrente, Matt King and Stefanie Loh
 
+# [LIVE DEMO](https://sloh03.github.io/beerRewards/)
 
 # Concept
-
 
 ## "How many beers was my workout worth?"
 This app answers the question we've all been asking and can be used to spark fun conversations after a workout with friends.
@@ -29,10 +29,6 @@ The app fits any browser window and all tablets and phones.
 * Google Fonts
 
 ![Alt text](images/7full_screen.png?raw=true "Full Screen")
-
-
-
-# [LIVE DEMO](https://sloh03.github.io/beerRewards/)
 
 
 # Tech
@@ -80,9 +76,11 @@ Click 'More Information' to visit the event website.
 
 
 # Future Development
-* Enter page 
+* Enter page
 * Create user login, track calories burned over time and favorite beers
-* Show more details in beer results -- images, search by location, map location, ratings
+* Add images, maps, and ratings to beer results
+* Search beer by distance
+* Add pages to beer results
 * Convert website into Android, iOS mobile app
 
 ![Alt text](images/8development.png?raw=true "Fullscreen")
