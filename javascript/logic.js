@@ -68,7 +68,7 @@ $(document).ready(function(){
             console.log('Beer preference: ' + beerPreference);
 
             // Call function to calculte calories burned
-            calories(workoutMetValue, weight);
+            calories(workoutMetValue, weight, workoutLength);
 
             // Run this if beerPreference has input
             if (beerPreference !== '') {
@@ -112,13 +112,13 @@ $(document).ready(function(){
     // MET values from https://epi.grants.cancer.gov/atus-met/met.php
     var caloriesBurned = 0;
 
-    function calories(MET, lbWeight) {
+    function calories(MET, lbWeight, workoutLength) {
 
         // Turn weight into kg
         var kgWeight = lbWeight/2.2;
 
         // Calculate calories burned
-        caloriesBurned = MET * kgWeight;
+        caloriesBurned = MET * kgWeight * workoutLength;
         console.log('Calories burned: ' + caloriesBurned);
     }
 
